@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" ng-app="myApp">
+<html lang="en-US" ng-app="todoApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +8,8 @@
 </head>
 <body>
 
-  <div class="container" ng-controller="SimpleController as smpctrl">
-    <h1>Hello, I am {{smpctrl.name}}...</h1>
-    Name: <input type ="text" ng-model="smpctrl.name"/>
-
-    <h2>My Friends</h2>
-    New Friend: <input type="text" ng-model="smpctrl.newFriend"/>
-    <button ng-click="smpctrl.cats.push(smpctrl.newFriend)">Add</button>
-
-    Remove Frenemy: <input type"text" ng-model="smpctrl.removeFriend"/>
-    <button ng-click="smpctrl.cats.pop(smpctrl.removeFriend)">Remove</button>
-
-    <br/><br/>Search: <input type ="text" ng-model="smpctrl.friendSearchQuery"/>
-    <a href='#' ng-click="smpctrl.friendReverse=!smpctrl.friendReverse">Sort by Reverse</a>
-    <ul>
-      <li ng-repeat="friendly in smpctrl.cats | orderBy:'':smpctrl.friendReverse | filter:friendSearchQuery">{{friendly | uppercase}}</li>
-      <!--Pipe allows you to filter components in ng and some accepts arguments-->
-    </ul>
+  <div class="container" ng-controller="ToDoController as todoC">
+    <h1> My To Dos</h1>
   </div>
 
   <script src="bower_components/angular/angular.min.js"></script>

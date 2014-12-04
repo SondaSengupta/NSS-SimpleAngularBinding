@@ -8,8 +8,29 @@
 </head>
 <body>
 
-  <div class="container" ng-controller="ToDoController as todoC">
+  <div class="container" ng-controller="ToDoController as todoCtrl">
     <h1> My To Dos</h1>
+    <form>
+      <label>Name</label><input type="text">
+      <label>Description</label><input type="text">
+      <label>Due Date</label><input type="date">
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Task Description</th>
+          <th>Task Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="task in todoCtrl.tasks">
+      <td>{{task.name}}</td>
+      <td>{{task.desc}}</td>
+      <td>{{task.due}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 
   <script src="bower_components/angular/angular.min.js"></script>

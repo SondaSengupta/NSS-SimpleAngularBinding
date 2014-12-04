@@ -19,6 +19,10 @@
         desc: 'If I could just get a developer job that would be Grand',
         due: '4 months'
       }
-      ]
+      ];
+
+      vm.addNewTask = function(){
+        vm.tasks.push(vm.newTask);
+      };
     });
 }());

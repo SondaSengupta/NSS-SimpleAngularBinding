@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" ng-app>
+<html lang="en-US" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" ng-controller="SimpleController">
     <h1>Hello, I am {{name}}...</h1>
     Name: <input type ="text" ng-model="name"/>
 
@@ -16,18 +16,18 @@
     New Friend: <input type="text" ng-model="newFriend"/>
     <button ng-click="cats.push(newFriend)">Add</button>
 
-    Remove Friend: <input type"text" ng-model="removeFriend"/>
+    Remove Frenemy: <input type"text" ng-model="removeFriend"/>
     <button ng-click="cats.pop(removeFriend)">Remove</button>
 
     <br/><br/>Search: <input type ="text" ng-model="friendSearchQuery"/>
     <a href='#' ng-click="friendReverse=!friendReverse">Sort by Reverse</a>
-    <ul ng-init="cats = ['Ashley','Bob','Susan']">
+    <ul>
       <li ng-repeat="friendly in cats | orderBy:'':friendReverse | filter:friendSearchQuery">{{friendly | uppercase}}</li>
       <!--Pipe allows you to filter components in ng and some accepts arguments-->
     </ul>
   </div>
 
-  <script src="js/main.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

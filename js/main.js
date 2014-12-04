@@ -1,5 +1,8 @@
 ;(function(){
   'use strict';
-
-  var hello = 'world';  
+  angular.module('myApp',[])
+    .controller('SimpleController',function($scope){
+      $scope.name = "Scott";
+      $scope.cats = ['Ashley','Bob','Susan'];
+    });
 }());

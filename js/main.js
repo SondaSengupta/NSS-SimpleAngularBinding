@@ -23,12 +23,28 @@
 
       vm.addNewTask = function(){
         vm.tasks.push(vm.newTask);
-        vm.newTask = null;
+        vm.newTask = _freshTask();
       };
 
       vm.removeTodo = function(todo){
         var index = vm.tasks.indexOf(todo);
         vm.tasks.splice(index,1);
       }
+
+      vm.newTask = _freshTask();
+
+      vm.priorityOptions = {
+        backburner: 'Backburner',
+        high: 'High',
+        medium: 'Medium',
+        low: 'Low'
+      }
+
+      function _freshTask(){
+        return {
+          priority: 'low'
+        }
+      };
+
     });
 }());
